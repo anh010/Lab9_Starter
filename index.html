@@ -102,6 +102,118 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+    //console log button 
+    let logBtn = errorBtns[0];
+    logBtn.addEventListener('click',()=>{
+      console.log("test");
+    });
+
+    //console error button 
+    let cErrorBtn = errorBtns[1];
+    cErrorBtn.addEventListener('click',()=>{
+      console.error('Intential Error do not worry :)');
+    });
+
+    //console count button 
+    let cCountBtn = errorBtns[2];
+    cCountBtn.addEventListener('click',()=>{
+      console.count();
+    });
+
+    //console warn button 
+    let warnBtn = errorBtns[3];
+    warnBtn.addEventListener('click',()=>{
+      console.warn("Intentional console warning");
+    });
+
+    // console assert button 
+    let assertBtn = errorBtns[4];
+    assertBtn.addEventListener('click',()=>{
+      console.assert(false,"assertion was false")
+    });
+
+    // console clear 
+    let clearBtn = errorBtns[5];
+    clearBtn.addEventListener('click',()=>{
+      console.clear();
+    });
+
+    // console dir button 
+    let cDirBtn = errorBtns[6];
+    cDirBtn.addEventListener('click',()=>{
+      console.dir(form);
+    });
+
+    //console dirxml
+    let dirXmlBtn = errorBtns[7];
+    dirXmlBtn.addEventListener('click',()=>{
+      console.dirxml(form);
+    });
+
+    // console group start 
+    let label = 'label created';
+    let gStartBtn = errorBtns[8];
+    gStartBtn.addEventListener('click',()=>{
+        console.group(label);
+
+    });
+
+    // console group start 
+    let gEndBtn = errorBtns[9];
+    gEndBtn.addEventListener('click',()=>{
+      console.groupEnd(label);
+    });
+
+    // console table 
+    let team8 = [
+      {
+        lead: 'Krish',
+        agile:'alex',
+        front:'maggie',
+        backend:'nikil'
+      },
+      {
+        lead: 'brian',
+        agile:'demi',
+        front:'Rishi',
+        backend:'Takuro'
+      }
+    ];
+
+    let tableBtn = errorBtns[10];
+    tableBtn.addEventListener('click',()=>{
+      console.table(team8);
+    });
+
+    // start timer 
+    let timerSBtn = errorBtns[11];
+    timerSBtn.addEventListener('click',()=>{
+      console.time();
+    });
+
+    // end timer 
+    let timerEBtn = errorBtns[12];
+    timerEBtn.addEventListener('click',()=>{
+      console.timeEnd();
+    });
+
+    // console trace
+    function call2(){
+      console.trace();
+    }
+    function call1(){
+      call2();
+    }
+    let traceBtn = errorBtns[13];
+    traceBtn.addEventListener('click',()=>{
+      call1()
+    });
+
+    // global error
+    let gErrBtn = errorBtns[14];
+    gErrBtn.addEventListener('click',()=>{
+      console.log(thisisbad);
+    });
   </script>
 </body>
 
