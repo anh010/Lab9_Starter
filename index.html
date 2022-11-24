@@ -87,7 +87,22 @@
     </section>
   </main>
 
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
   <script>
+    window.TrackJS && TrackJS.install({ 
+      token: "3d3b82a7484a4389912fdf7568e56fa9"
+      // for more configuration options, see https://docs.trackjs.com
+    });
+  </script>
+                          
+  <script>
+    class FormError extends Error{
+      constructor(message){
+        super(message);
+        this.name ="Form Error";
+      }
+    }
+
     let form = document.querySelector('form');
     form.addEventListener('submit', e => {
       e.preventDefault();
@@ -95,6 +110,15 @@
       let firstNum = document.querySelector('#first-num').value;
       let secondNum = document.querySelector('#second-num').value;
       let operator = document.querySelector('#operator').value;
+
+      try {
+        if(isNaN(firstNum)||isNaN(secondNum)){
+          throw new FormError("Invalid input(s) check either box");
+        }
+
+      } catch (error) {
+        console.error(`${error.name}:${error.message}`);
+      }
       output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
     });
 
@@ -213,7 +237,13 @@
     let gErrBtn = errorBtns[14];
     gErrBtn.addEventListener('click',()=>{
       console.log(thisisbad);
+      notdefine();
     });
+
+    window.addEventListener('error',()=>{
+      console.error('sadly an error happened my friend');
+    });
+    
   </script>
 </body>
 
